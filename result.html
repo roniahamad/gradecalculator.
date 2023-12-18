@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade Calculator</title>
+</head>
+<body>
+
+  <h1>Grade Calculator</h1>
+
+  <label for="rollNo">Enter Roll No.:</label>
+  <input type="number" id="rollNo" min="1" step="1">
+
+  <button onclick="calculateResult()">Calculate Result</button>
+
+  <p id="result">Result: <span id="output"></span></p>
+
+  <script>
+    function calculateResult() {
+      var rollNo = parseInt(document.getElementById('rollNo').value);
+
+      if (rollNo >= 1 && rollNo <= 2) {
+        document.getElementById('output').textContent = 'A+';
+      } else if (rollNo >= 3 && rollNo <= 4) {
+        document.getElementById('output').textContent = 'B+';
+      } else if (rollNo >= 5 && rollNo <= 10) {
+        document.getElementById('output').textContent = 'A-';
+      } else if (rollNo === 11) {
+        document.getElementById('output').textContent = 'Failed';
+      } else {
+        document.getElementById('output').textContent = 'Invalid Roll No.';
+      }
+    }
+  </script>
+
+</body>
+</html>
